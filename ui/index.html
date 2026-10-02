@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#24020a">
+  <title>Subpool</title>
+  <link rel="icon" href="/ui/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/ui/style.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="bar-inner">
+      <a class="brand" href="#/overview" aria-label="subpool overview">
+        <span><span class="w1">sub</span>pool</span>
+      </a>
+      <nav class="tabs" aria-label="Sections">
+        <a href="#/overview" data-tab="overview">Overview</a>
+        <a href="#/accounts" data-tab="accounts">Accounts</a>
+        <a href="#/requests" data-tab="requests">Requests</a>
+        <a href="#/config" data-tab="config">Config</a>
+      </nav>
+      <div class="bar-status" id="live-status" aria-live="polite"></div>
+    </div>
+  </header>
+  <main id="view" class="view" tabindex="-1"></main>
+  <script src="/ui/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+[package]
+name = "subpool"
+version = "0.1.1"
+edition = "2024"
+rust-version = "1.88"
+description = "One fast binary that turns your Claude, ChatGPT (Codex) and Gemini accounts into OpenAI, Anthropic and Gemini compatible APIs."
+license = "Unlicense"
+repository = "https://github.com/rohan-patnaik/subpool"
+homepage = "https://github.com/rohan-patnaik/subpool"
+keywords = ["llm", "proxy", "claude", "openai", "gemini"]
+categories = ["command-line-utilities", "web-programming::http-server"]
+readme = "README.md"
+
+[dependencies]
+anyhow = "1"
+arc-swap = "1"
+async-stream = "0.3"
+axum = { version = "0.8", features = ["ws", "macros"] }
+base64 = "0.22"
+bytes = "1"
+chrono = { version = "0.4", default-features = false, features = ["clock", "std", "serde"] }
+clap = { version = "4", features = ["derive", "env"] }
+futures = "0.3"
+hex = "0.4"
+open = "5"
+parking_lot = "0.12"
+rand = "0.9"
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "stream", "json", "gzip", "brotli", "zstd", "deflate", "socks", "http2"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+serde_yaml = "0.9"
+sha2 = "0.10"
+tokio = { version = "1", features = ["full"] }
+tokio-tungstenite = { version = "0.27", features = ["rustls-tls-native-roots"] }
+tower-http = { version = "0.6", features = ["cors"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+url = "2"
+uuid = { version = "1", features = ["v4"] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
+opt-level = 3
